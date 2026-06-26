@@ -1,0 +1,16 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --lasu-green: #006400;
+    --lasu-gold: #FFD700;
+}
+
+.navbar { background-color: var(--lasu-green) !important; }
+.navbar-brand, .nav-link { color: white !important; }
+.nav-link:hover { color: var(--lasu-gold) !important; }
+.btn-primary { background-color: var(--lasu-green); border-color: var(--lasu-green); }
+.btn-primary:hover { background-color: #004d00; border-color: #004d00; }
+.hero { background: linear-gradient(135deg, var(--lasu-green), #004d00); color: white; padding: 80px 0; }
+.card { border: none; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
+.card:hover { transform: translateY(-3px); }
+footer { background-color: var(--lasu-green); color: white; padding: 30px 0; margin-top: 60px; }
