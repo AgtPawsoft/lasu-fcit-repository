@@ -26,11 +26,22 @@
                         @if(auth()->user()->isAdmin())
                             <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}">Admin</a></li>
                         @endif
-                        <li class="nav-item">
-                            <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-link nav-link">Logout</button>
-                            </form>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
                         </li>
                     @else
                         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
