@@ -73,7 +73,7 @@ class DocumentController extends Controller
             'category_id' => $req->category_id,
             'keywords' => $req->keywords,
             'publication_year' => $req->publication_year,
-            'status' => 'pending',
+            'status' => auth()->user()->isAdmin() ? 'approved' : 'pending',
         ]);
 
         Author::create(['document_id' => $doc->id, 'user_id' => auth()->id(), 'is_primary' => true]);
